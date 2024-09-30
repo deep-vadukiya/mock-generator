@@ -10,8 +10,16 @@ import { APP_PATH } from "../../routes/paths";
 
 // ------------------------------------------------
 
+// Note: Credit card size: 1011*638 px
+
 export default function CardMock() {
   const navigate = useNavigate();
+
+  const bankName = "HDFC Bank";
+  const bankPartnerName = "TATA NEUCARD PLUS";
+  const cardType = "Rupay";
+  const cardTypeCategory = "PLATINUM";
+  const backgroundColor = "#8CC0DE";
 
   return (
     <div>
@@ -19,14 +27,37 @@ export default function CardMock() {
 
       <p>Generate Card Mock</p>
 
-      <div className="container border-2 mx-auto">
-        <div className="border-radius:0.125rem p-2">
-          <p>hello</p>
+      <div className="h-36" />
 
-          <div className="flex items-center justify-center h-screen bg-gray-100">
-            <h1 className="text-4xl font-bold text-blue-600">
-              Hello, Tailwind!
-            </h1>
+      <div
+        className="container mx-auto p-10 rounded-xl shadow-xl"
+        style={{ backgroundColor }}
+      >
+        <div style={{ maxWidth: 1011, maxHeight: 638 }}>
+          <div className="w-full h-full">
+            <div className="w-full flex justify-between">
+              <div className="space-y-2">
+                <p className="font-sans text-3xl font-bold text-white">
+                  {bankName}
+                </p>
+                <p className="font-sans text-2xl text-white opacity-70">
+                  {bankPartnerName}
+                </p>
+              </div>
+
+              <div className="space-y-2 justify-end">
+                <p className="font-sans text-3xl font-semibold text-white text-end">
+                  {cardType}
+                </p>
+                <p className="font-sans text-xl font-thin text-white">
+                  {cardTypeCategory}
+                </p>
+              </div>
+            </div>
+
+            <div></div>
+
+            <div></div>
           </div>
         </div>
       </div>
