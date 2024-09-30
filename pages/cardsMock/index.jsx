@@ -2,6 +2,10 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
+//
+// import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+//
 import { APP_PATH } from "../../routes/paths";
 
 // ------------------------------------------------
@@ -11,7 +15,7 @@ export default function CardMock() {
 
   return (
     <div>
-      <button onClick={() => navigate(APP_PATH.landingPath)}>Back</button>
+      <Button onClick={() => navigate(APP_PATH.landingPath)}>Back</Button>
 
       <p>Generate Card Mock</p>
 
