@@ -49,9 +49,9 @@ export default function CardMock() {
 
       <p>Generate Card Mock</p>
 
-      <div className="h-36" />
+      <div className="h-24" />
 
-      <div className="p-8" id="print">
+      <div className="p-8 overflow-x-auto" id="print">
         <div
           className="container mx-auto p-12 rounded-3xl shadow-xl flex flex-col justify-between"
           style={{ backgroundColor, maxWidth: 880, height: 510 }}
