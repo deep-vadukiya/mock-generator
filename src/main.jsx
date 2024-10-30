@@ -12,7 +12,7 @@ import "./main.css";
 
 createRoot(document.getElementById("root")).render(
   <Fragment>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.DEV ? "/" : "/mock-generator/"}>
       <App />
     </BrowserRouter>
   </Fragment>
