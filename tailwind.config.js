@@ -5,7 +5,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{html,js,jsx}",
-    "./components/**/*.{html,js,jsx}",
+    "./common/**/*.{html,js,jsx}",
   ],
   theme: {
     extend: {

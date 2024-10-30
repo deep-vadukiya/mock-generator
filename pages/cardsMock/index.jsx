@@ -18,7 +18,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 // utility
 import { APP_PATH } from "../../routes/paths";
-import CardChip from "../../assets/creditCard/cardChip";
+import CardChip from "../../assets/creditCard/CardChip";
 import Nfc from "../../assets/creditCard/Nfc";
 
 // ------------------------------------------------
