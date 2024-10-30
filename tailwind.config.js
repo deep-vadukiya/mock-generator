@@ -2,10 +2,11 @@
 export default {
   darkMode: ["class"],
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{html,js,jsx}",
-    "./common/**/*.{html,js,jsx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./@/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
