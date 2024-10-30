@@ -41,6 +41,8 @@ const CARD_MOCK_DATA = {
   cardCVV: "123",
 
   isNFCEnabled: true,
+
+  cardResolution: 2,
 };
 
 const CARD_TYPES = {
@@ -57,12 +59,23 @@ export default function CardMock() {
 
   const handleDownloadImage = async () => {
     const element = document.getElementById("print"),
-      canvas = await html2canvas(element),
+      canvas = await html2canvas(element, {
+        scale:
+          cardDetails.cardResolution >= 2 && cardDetails.cardResolution <= 6
+            ? cardDetails.cardResolution
+            : 2,
+      }),
       data = canvas.toDataURL("image/jpg"),
       link = document.createElement("a");
 
     link.href = data;
-    link.download = "downloaded-image.jpg";
+    link.download = `mock-generator-credit-card-${new Intl.DateTimeFormat(
+      "en-GB"
+    ).format(new Date())}_resX${
+      cardDetails.cardResolution >= 2 && cardDetails.cardResolution <= 6
+        ? cardDetails.cardResolution
+        : 2
+    }.jpg`;
 
     document.body.appendChild(link);
     link.click();
@@ -213,13 +226,26 @@ export default function CardMock() {
                 placeholder="Background color"
               />
             </div>
+
+            <Input
+              type="number"
+              min={2}
+              max={6}
+              value={cardDetails.cardResolution}
+              onChange={cardDetailUpdate}
+              name="cardResolution"
+              placeholder="Card Download Resolution Scale"
+            />
           </div>
         </div>
 
         <div>
-          <div className="md:p-8 overflow-x-auto" id="print">
+          <div
+            className="md:p-8 p-2 overflow-x-auto flex justify-center"
+            id="print"
+          >
             <div
-              className="container mx-auto p-5 rounded-3xl shadow-xl flex flex-col justify-between"
+              className="container p-5 rounded-3xl shadow-xl flex flex-col justify-between"
               style={{
                 backgroundColor: cardDetails.backgroundColor ?? "#8CC0DE",
                 maxWidth: 440,
