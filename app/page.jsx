@@ -1,12 +1,10 @@
 //
 
-import React from "react";
-import { Link } from "react-router-dom";
-import { APP_PATH } from "../../routes/paths";
+import Link from "next/link";
 
 // ------------------------------------------------
 
-export default function LandingPage() {
+export default function Page() {
   return (
     <div className="container mx-auto mt-6 flex flex-col gap-4">
       <div>
@@ -16,11 +14,11 @@ export default function LandingPage() {
       </div>
 
       <div className="flex flex-col gap-4 mt-6">
-        <Link to={APP_PATH.cardMockRoute} className="underline">
+        <Link href="/credit-card-mock" className="underline">
           {"> 1. Generate Card Mock ..."}
         </Link>
 
-        <Link to={APP_PATH.bankDetailsMockRoute} className="underline">
+        <Link href="/bank-details-mock" className="underline">
           {"> 2. Generate Bank Details Mock ..."}
         </Link>
       </div>

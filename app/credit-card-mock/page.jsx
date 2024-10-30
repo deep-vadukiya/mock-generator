@@ -1,11 +1,11 @@
-//
+"use client";
 
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Link from "next/link";
 import html2canvas from "html2canvas";
 import { CircleAlert, HardDriveDownload, House } from "lucide-react";
 // radix components
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -17,7 +17,6 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 // utility
-import { APP_PATH } from "../../routes/paths";
 import CardChip from "../../assets/creditCard/CardChip";
 import Nfc from "../../assets/creditCard/Nfc";
 
@@ -52,9 +51,7 @@ const CARD_TYPES = {
   charge_card: "Charge Card",
 };
 
-export default function CardMock() {
-  const navigate = useNavigate();
-
+export default function Page() {
   const [cardDetails, setCardDetails] = useState(CARD_MOCK_DATA);
 
   const handleDownloadImage = async () => {
@@ -108,12 +105,9 @@ export default function CardMock() {
   return (
     <div className="container mx-auto p-4 space-y-6 sm:pb-8">
       <div className="flex items-center gap-4">
-        <Button
-          variant="secondary"
-          onClick={() => navigate(APP_PATH.landingPath)}
-        >
+        <Link className={buttonVariants({ variant: "secondary" })} href="/">
           <House size={16} />
-        </Button>
+        </Link>
 
         <p>Generate Card Mock</p>
       </div>
