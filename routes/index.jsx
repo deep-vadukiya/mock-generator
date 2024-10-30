@@ -9,6 +9,7 @@ import CommonHeader from "../components/CommonHeader";
 import LandingPage from "../pages/landingPage";
 import CardMock from "../pages/cardsMock";
 import BankMock from "../pages/bankMock";
+import NotFound from "../components/NotFound";
 
 // ------------------------------------------------
 
@@ -25,6 +26,10 @@ export default function Router() {
           element: <BankMock />,
         },
       ],
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     },
   ]);
 }
