@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
-import { HardDriveDownload, House } from "lucide-react";
+import { CircleAlert, HardDriveDownload, House } from "lucide-react";
 // radix components
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -119,6 +119,16 @@ export default function CardMock() {
       </div>
 
       <p className="font-semibold text-lg">Enter Card Details</p>
+
+      <div className="sm:hidden block p-3 bg-red-100 border rounded-md border-red-200">
+        <div className="flex gap-3 items-center">
+          <CircleAlert size={14} className="text-red-600" />
+          <p className="text-red-600">
+            Note: UI will not render as expected in small screens. However you
+            can still try ... 🤞🏻
+          </p>
+        </div>
+      </div>
 
       <div className="grid lg:grid-cols-2">
         <div className="">

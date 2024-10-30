@@ -11,7 +11,7 @@ export default function CommonHeader() {
     <>
       <nav className="flex justify-between p-4 border-b">
         <Link className="" to="/">
-          <b>Mock Generator</b>
+          <p className="font-semibold text-lg">Mock Generator</p>
         </Link>
 
         <div className="flex gap-4">
