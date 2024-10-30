@@ -106,7 +106,7 @@ export default function CardMock() {
   };
 
   return (
-    <div className="container mx-auto p-4 space-y-6">
+    <div className="container mx-auto p-4 space-y-6 sm:pb-8">
       <div className="flex items-center gap-4">
         <Button
           variant="secondary"
@@ -239,17 +239,18 @@ export default function CardMock() {
           </div>
         </div>
 
-        <div>
-          <div
-            className="md:p-8 p-2 overflow-x-auto flex justify-center"
-            id="print"
-          >
+        <div
+          className="-order-1 lg:order-1 overflow-x-auto block"
+          style={{ overflow: "scroll" }}
+        >
+          <div className="md:p-8 p-4 flex justify-center" id="print">
             <div
               className="container p-5 rounded-3xl shadow-xl flex flex-col justify-between"
               style={{
                 backgroundColor: cardDetails.backgroundColor ?? "#8CC0DE",
-                maxWidth: 440,
+                width: 440,
                 height: 260,
+                minWidth: 440,
               }}
             >
               <div className="w-full flex justify-between">
@@ -324,14 +325,14 @@ export default function CardMock() {
             </div>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center py-3">
             <Button
               onClick={handleDownloadImage}
               variant="outline"
               className="gap-2"
             >
               <HardDriveDownload size={16} />
-              download card
+              Download Card
             </Button>
           </div>
         </div>
