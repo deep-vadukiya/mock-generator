@@ -1,12 +1,13 @@
 //
 
 import Link from "next/link";
-// illustration
-import { CollectionHero } from "../assets/illustrations/collectionHero";
-import { Button } from "@/components/ui/button";
-// paths
-import { APP_AVAILABLE_TOOLS, APP_CREDIT_CARD_MOCK } from "globalLinks";
 import { FileCheck2, ShieldCheck, Handshake } from "lucide-react";
+// components
+import { Button } from "@/components/ui/button";
+// illustration
+import { CollectionHero } from "../assets/illustrations/CollectionHero";
+// paths
+import { APP_AVAILABLE_TOOLS, APP_CREDIT_CARD_MOCK } from "../globalLinks";
 
 // ------------------------------------------------
 
