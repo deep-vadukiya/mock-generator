@@ -38,11 +38,32 @@ const FEATURES = [
   },
 ];
 
+// app/your-page/page.js
+export const metadata = {
+  title: "Mock Generator",
+  description: "Generate mock for your Financial confidentials.",
+  openGraph: {
+    title: "Mock Generator By Deep Vadukiya",
+    description: "Generate mock for your Financial confidentials.",
+    url: "https://deep-vadukiya.github.io/mock-generator/",
+    type: "website",
+    images: [
+      {
+        url: "/images/mock_generator_preview.png",
+        width: 1415,
+        height: 808,
+        alt: "Mock generator preview image",
+      },
+    ],
+    siteName: "Mock Generator",
+  },
+};
+
 export default function Page() {
   return (
     <div className="container mx-auto flex flex-col gap-24">
       {/* hero section */}
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center px-8 gap-6">
           <p className="text-3xl">
             Transform Your Financial Records into Mockups Securely & Instantly.
@@ -61,9 +82,9 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center -order-1 md:order-1 ">
+        <div className="flex flex-col justify-center items-center -order-1 lg:order-1 overflow-hidden">
           <div className="flex flex-col">
-            <CollectionHero height={300} />
+            <CollectionHero height={300} width={600} />
           </div>
         </div>
       </div>
