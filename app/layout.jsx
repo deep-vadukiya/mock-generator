@@ -25,7 +25,8 @@ const components = [
   {
     title: "Credit Card Mockup",
     href: APP_CREDIT_CARD_MOCK,
-    description: "Create Credit Card Mocksups",
+    description:
+      "Create Credit Card Mocksups With Minimal and Required Details",
   },
   {
     title: "Bank Detail Mockup",
