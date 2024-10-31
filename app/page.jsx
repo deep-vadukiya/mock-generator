@@ -39,7 +39,7 @@ const FEATURES = [
 
 export default function Page() {
   return (
-    <div className="container mx-auto flex flex-col gap-24 mb-24">
+    <div className="container mx-auto flex flex-col gap-24">
       {/* hero section */}
       <div className="grid md:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center px-8 gap-6">

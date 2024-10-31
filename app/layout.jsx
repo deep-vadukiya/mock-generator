@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen">
-        <nav className="flex justify-between p-4 border-b">
+        <nav className="flex justify-between p-4 border-b mb-16">
           <Link className="" href="/">
             <p className="font-semibold text-lg">Mock Generator</p>
           </Link>
@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
 
         {children}
 
-        <div className="sticky top-[100vh] h-36 border-t p-4">
+        <div className="sticky top-[100vh] h-36 border-t p-4 mt-20">
           <div className="p-6 md:p-3 justify-between flex md:flex-row flex-col mx-auto container">
             <div>
               <p className="text-sm">
