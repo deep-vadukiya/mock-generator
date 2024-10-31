@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Github } from "lucide-react";
 import { GITHUB_REPOSITORY_LINK } from "./../globalLinks";
 import "./global.css";
+import { Button } from "@/components/ui/button";
 
 // ----------------------------------------------
 
@@ -16,27 +17,20 @@ export default function RootLayout({ children }) {
             <p className="font-semibold text-lg">Mock Generator</p>
           </Link>
 
-          <div className="flex gap-6 items-center">
-            <Link
-              className="group text-gray-500 transition duration-300 hover:underline hover:text-gray-900"
-              href="/"
-            >
-              ABOUT US
-            </Link>
+          <div className="flex gap-4 items-center">
+            <Button asChild variant="ghost">
+              <Link href="/">ABOUT US</Link>
+            </Button>
 
-            <Link
-              className="group text-gray-500 transition duration-300 hover:underline hover:text-gray-900"
-              href="/"
-            >
-              DOCUMENTATION
-            </Link>
+            <Button asChild variant="ghost">
+              <Link href="/">DOCUMENTATION</Link>
+            </Button>
 
-            <Link
-              className="group text-gray-500 transition duration-300 hover:underline hover:text-gray-900"
-              href={GITHUB_REPOSITORY_LINK}
-            >
-              <Github size={20} />
-            </Link>
+            <Button asChild variant="ghost">
+              <Link href={GITHUB_REPOSITORY_LINK} target="_blank">
+                <Github size={20} />
+              </Link>
+            </Button>
           </div>
         </nav>
 
