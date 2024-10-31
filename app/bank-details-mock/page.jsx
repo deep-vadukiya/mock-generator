@@ -5,10 +5,11 @@
 import React, { useState } from "react";
 import { House, CircleAlert } from "lucide-react";
 import Link from "next/link";
+import html2canvas from "html2canvas";
 // icons
-import { User } from "lucide-react";
+import { User, HardDriveDownload } from "lucide-react";
 // components
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -17,6 +18,7 @@ import { Label } from "@/components/ui/label";
 const BANK_MOCK_DATA = {
   backgroundColor: "#FFFFFF",
   themeColor: "#111111",
+  cardResolution: 2,
 
   userName: "John Doe",
   userEmail: "john.doe@gmail.com",
@@ -49,6 +51,31 @@ export default function Page() {
       ...bankDetails,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleDownloadImage = async () => {
+    const element = document.getElementById("print"),
+      canvas = await html2canvas(element, {
+        scale:
+          bankDetails.cardResolution >= 2 && bankDetails.cardResolution <= 6
+            ? bankDetails.cardResolution
+            : 2,
+      }),
+      data = canvas.toDataURL("image/jpg"),
+      link = document.createElement("a");
+
+    link.href = data;
+    link.download = `mock-generator-bank-details-${new Intl.DateTimeFormat(
+      "en-GB"
+    ).format(new Date())}_resX${
+      bankDetails.cardResolution >= 2 && bankDetails.cardResolution <= 6
+        ? bankDetails.cardResolution
+        : 2
+    }.jpg`;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -214,11 +241,11 @@ export default function Page() {
         >
           <div className="md:p-8 p-4 flex justify-center" id="print">
             <div
-              className="container p-5 rounded-3xl shadow-xl flex flex-col"
+              className="container p-5 rounded-3xl shadow-xl flex flex-col border border-gray-100"
               style={{
                 backgroundColor: bankDetails.backgroundColor ?? "#FFFFFF",
                 width: 480,
-                height: 480,
+                minHeight: 480,
                 minWidth: 460,
               }}
             >
@@ -231,9 +258,9 @@ export default function Page() {
                     <User color={bankDetails.themeColor || "#111111"} />
                   </div>
 
-                  <div>
-                    <p className="leading-5">{bankDetails.userName}</p>
-                    <p className="text-muted-foreground leading-5 text-sm">
+                  <div className="flex flex-col">
+                    <p className="text-base">{bankDetails.userName}</p>
+                    <p className="text-muted-foreground text-sm">
                       {bankDetails.userEmail}
                     </p>
                   </div>
@@ -265,6 +292,17 @@ export default function Page() {
                 );
               })}
             </div>
+          </div>
+
+          <div className="flex justify-center py-3">
+            <Button
+              onClick={handleDownloadImage}
+              variant="outline"
+              className="gap-2"
+            >
+              <HardDriveDownload size={16} />
+              Download Card
+            </Button>
           </div>
         </div>
       </div>
