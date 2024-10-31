@@ -1,6 +1,9 @@
 //
 
 export const GITHUB_PLATFORM_LINK = "https://github.com";
+export const VERCEL_PLATFORM_LINK = "https://vercel.com";
+export const NEXTJS_PLATFORM_LINK = "https://nextjs.org";
+export const UNDRAW_PLATFORM_LINK = "https://undraw.co";
 
 // profiles
 export const GITHUB_PROFILE_LINK = "https://github.com/deep-vadukiya";

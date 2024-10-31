@@ -2,12 +2,10 @@
 
 import Link from "next/link";
 import { Github } from "lucide-react";
-import {
-  APP_BANK_DETAILS_MOCK,
-  APP_CREDIT_CARD_MOCK,
-  GITHUB_REPOSITORY_LINK,
-} from "./../globalLinks";
+//
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+//
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,7 +14,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+//
+import {
+  APP_BANK_DETAILS_MOCK,
+  APP_CREDIT_CARD_MOCK,
+  GITHUB_PLATFORM_LINK,
+  GITHUB_PROFILE_LINK,
+  GITHUB_REPOSITORY_LINK,
+  NEXTJS_PLATFORM_LINK,
+  UNDRAW_PLATFORM_LINK,
+} from "./../globalLinks";
 import "./global.css";
 
 // ----------------------------------------------
@@ -38,7 +45,7 @@ const components = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen">
         <nav className="flex justify-between p-4 border-b">
           <Link className="" href="/">
             <p className="font-semibold text-lg">Mock Generator</p>
@@ -79,6 +86,43 @@ export default function RootLayout({ children }) {
         </nav>
 
         {children}
+
+        <div className="h-36"></div>
+        <div className="h-36"></div>
+        <div className="h-36"></div>
+
+        <div className="sticky top-[100vh] h-36 border-t p-4">
+          <div className="p-6 md:p-3 justify-between flex md:flex-row flex-col">
+            <div>
+              <p className="text-sm">
+                <span>Powered by&nbsp;</span>
+                <a href={GITHUB_PLATFORM_LINK} target="_blank">
+                  <u>GitHub</u>
+                </a>
+                &nbsp;and&nbsp;
+                <a href={NEXTJS_PLATFORM_LINK} target="_blank">
+                  <u>Next.Js</u>
+                </a>
+              </p>
+
+              <p className="text-sm pt-2">
+                <span>Developed, Crafted with 💜 by &nbsp;</span>
+                <Link href={GITHUB_PROFILE_LINK} target="_blank">
+                  <u>@deep-vadukiya</u>
+                </Link>
+              </p>
+            </div>
+
+            <div className="pt-2 md:pt-0">
+              <p className="text-sm">
+                <span>Images by&nbsp;</span>
+                <a href={UNDRAW_PLATFORM_LINK} target="_blank">
+                  <u>Undraw.</u>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   );
