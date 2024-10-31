@@ -2,7 +2,7 @@
 
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { House, CircleAlert } from "lucide-react";
 import Link from "next/link";
 import html2canvas from "html2canvas";
