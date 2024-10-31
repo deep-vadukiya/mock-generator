@@ -165,7 +165,7 @@ export default function Page() {
                   type="text"
                   value={bankDetails.accountNumber}
                   onChange={bankDetailsUpdate}
-                  name="accountHolderNumber"
+                  name="accountNumber"
                   placeholder="Account Number"
                 />
               </div>
@@ -286,7 +286,7 @@ export default function Page() {
                   >
                     <p className="text-base">{el.value}</p>
                     <p className="text-base text-muted-foreground">
-                      {BANK_MOCK_DATA[el.key]}
+                      {bankDetails[el.key]}
                     </p>
                   </div>
                 );
