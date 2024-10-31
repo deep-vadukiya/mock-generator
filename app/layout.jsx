@@ -87,10 +87,6 @@ export default function RootLayout({ children }) {
 
         {children}
 
-        <div className="h-36"></div>
-        <div className="h-36"></div>
-        <div className="h-36"></div>
-
         <div className="sticky top-[100vh] h-36 border-t p-4">
           <div className="p-6 md:p-3 justify-between flex md:flex-row flex-col">
             <div>
