@@ -5,8 +5,8 @@ import * as React from "react";
 // ------------------------------------------------
 
 export const CollectionHero = (props) => {
-  let hei = props?.height ? props?.height : 449.4884;
-  let wid = props?.width ? props?.width : 861.67538;
+  let hei = props?.height ?? 449.4884;
+  let wid = props?.width ?? 861.67538;
 
   const viewBoxVal = `0 0 ${wid} ${hei}`;
 
