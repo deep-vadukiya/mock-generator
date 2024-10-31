@@ -46,12 +46,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen">
-        <nav className="flex justify-between p-4 border-b mb-16">
+        <nav className="flex flex-col sm:flex-row justify-between p-4 border-b mb-16">
           <Link className="" href="/">
             <p className="font-semibold text-lg">Mock Generator</p>
           </Link>
 
-          <div className="flex md:gap-4">
+          <div className="flex justify-between md:gap-4">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
