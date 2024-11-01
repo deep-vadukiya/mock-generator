@@ -2,6 +2,7 @@
 
 const isProduction = process.env.NODE_ENV === "production";
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   /**
    * Enable static exports for the App Router.
